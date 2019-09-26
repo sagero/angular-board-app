@@ -1,5 +1,5 @@
 <main>
-  <app-card-list>Backlog</app-card-list>
-  <app-card-list>In progress</app-card-list>
-  <app-card-list>Done</app-card-list>
+  <div *ngFor="let item of items">
+      <app-card-list [cardList]="item"></app-card-list>
+  </div>
 </main>
