@@ -41,12 +41,12 @@ export class AppComponent {
       name:'In progress',
       cards: [
         {
-          id: '1',
+          id: '4',
           name: 'task1',
           description: 'desc1'
         },
         {
-          id: '2',
+          id: '5',
           name: 'task2',
           description: 'desc2'
         }
@@ -57,7 +57,7 @@ export class AppComponent {
       name:'Done',
       cards: [
         {
-          id: '1',
+          id: '6',
           name: 'task1',
           description: 'desc1'
         }

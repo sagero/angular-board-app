@@ -10,7 +10,7 @@
       <p>Assignee</p>
       <div class="task-operation">
         <button mat-flat-button color="accent">Edit</button>
-        <button mat-flat-button color="warn">Remove</button>
+        <button mat-flat-button color="warn" (click)="onRemove(card)">Remove</button>
       </div>
     </mat-expansion-panel>
   </mat-accordion>

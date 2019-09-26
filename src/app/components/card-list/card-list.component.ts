@@ -12,6 +12,11 @@ export class CardListComponent implements OnInit {
   @Input() searchCriterion: string
   @Output() removeCard = new EventEmitter<Card>()
 
+  public removeItem(item: Card) {
+    const index = this.cardList.cards.findIndex(i => i.id === item.id);
+    this.cardList.cards.splice(index, 1);
+  }
+
   constructor() { }
 
   ngOnInit() {
