@@ -1,1 +1,16 @@
-<p>card-item works!</p>
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Task name
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Description</p>
+      <p>Due date</p>
+      <p>Assignee</p>
+      <div class="task-operation">
+        <button mat-flat-button color="accent">Edit</button>
+        <button mat-flat-button color="warn">Remove</button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
