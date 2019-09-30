@@ -5,8 +5,10 @@ import { Directive, ElementRef, Renderer2, Input, OnChanges, OnInit } from '@ang
 })
 export class CardDueDirective implements OnInit{
   @Input() dueDate: Date;
+  @Input() done: Boolean;
+
   ngOnInit() {
-    if (this.dueDate) {
+    if ((!this.done)&&(this.dueDate)) {
       const delta=this.dueDate.getDate() - new Date().getDate();
       if (delta < 3) {
         this.renderer.setStyle(this.elementRef.nativeElement, "background-color", "red");

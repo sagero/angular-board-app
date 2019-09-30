@@ -59,7 +59,8 @@ export class BoardComponent {
         {
           id: '6',
           name: 'task1',
-          description: 'desc1'
+          description: 'desc1',
+          dueDate: new Date('Tue Oct 02 2019 01:02:48 GMT+0300')
         }
       ],
       isDoneSection: true
