@@ -5,7 +5,7 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div *ngFor="let item of cardList.cards">
+    <div *ngFor="let item of cardList.cards | filter: searchCriterion;">
         <app-card-item [card]="item" (removeCard)="removeItem($event)"></app-card-item>
     </div>
 </mat-card-content>

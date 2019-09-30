@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
   @Input() public items: any;
+  @Input() public searchCriterion: string;
   constructor() { }
   ngOnInit() {
   }

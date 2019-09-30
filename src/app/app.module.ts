@@ -17,6 +17,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatExpansionModule} from '@angular/material';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {
     BoardComponent,
     FooterComponent,
     CardListComponent,
-    CardItemComponent
+    CardItemComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
