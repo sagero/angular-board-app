@@ -1,5 +1,9 @@
 <main>
   <div *ngFor="let item of items">
-      <app-card-list [cardList]="item" [searchCriterion]="searchCriterion"></app-card-list>
+      <app-card-list
+        [cardList]="item"
+        [searchCriterion]="searchCriterion"
+        (remove)="removeItem($event)">
+      </app-card-list>
   </div>
 </main>
