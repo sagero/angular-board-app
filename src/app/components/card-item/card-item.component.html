@@ -1,6 +1,6 @@
 <mat-accordion>
     <mat-expansion-panel>
-      <mat-expansion-panel-header>
+      <mat-expansion-panel-header appCardDue [dueDate]="card.dueDate">
         <mat-panel-title [ngClass]="{done:isDone}">
           {{card.name}}
         </mat-panel-title>

@@ -18,6 +18,7 @@ import {
   MatCardModule,
   MatExpansionModule} from '@angular/material';
 import { FilterPipe } from './pipes/filter.pipe';
+import { CardDueDirective } from './directives/card-due.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     FooterComponent,
     CardListComponent,
     CardItemComponent,
-    FilterPipe
+    FilterPipe,
+    CardDueDirective
   ],
   imports: [
     BrowserModule,

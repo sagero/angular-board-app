@@ -18,12 +18,14 @@ export class BoardComponent {
         {
           id: '1',
           name: 'task1',
-          description: 'desc1'
+          description: 'desc1',
+          dueDate: new Date('Tue Oct 05 2019 01:02:48 GMT+0300')
         },
         {
           id: '2',
           name: 'task2',
-          description: 'desc2'
+          description: 'desc2',
+          dueDate: new Date('Tue Oct 02 2019 01:02:48 GMT+0300')
         },
         {
           id: '3',
