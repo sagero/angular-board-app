@@ -10,8 +10,6 @@ import Card from 'src/app/models/Card';
 export class BoardComponent {
   @Input() public searchCriterion: string;
 
-
-
   public items:CardList [] =[
     {
       id: '0',
@@ -32,7 +30,8 @@ export class BoardComponent {
           name: 'task3',
           description: 'desc3'
         }
-      ]
+      ],
+      isDoneSection: false
     },
     {
       id: '1',
@@ -48,7 +47,8 @@ export class BoardComponent {
           name: 'task2',
           description: 'desc2'
         }
-      ]
+      ],
+      isDoneSection: false
     },
     {
       id: '2',
@@ -59,7 +59,8 @@ export class BoardComponent {
           name: 'task1',
           description: 'desc1'
         }
-      ]
+      ],
+      isDoneSection: true
     }
   ];
 
