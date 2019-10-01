@@ -19,7 +19,12 @@ export class BoardComponent {
           id: '1',
           name: 'task1',
           description: 'desc1',
-          dueDate: new Date('Tue Oct 05 2019 01:02:48 GMT+0300')
+          dueDate: new Date('Tue Oct 05 2019 01:02:48 GMT+0300'),
+          assignee: {
+            id: '1',
+            firstName: 'Siarhei',
+            lastName: 'Kiniou'
+          }
         },
         {
           id: '2',
@@ -42,7 +47,12 @@ export class BoardComponent {
         {
           id: '4',
           name: 'task1',
-          description: 'desc1'
+          description: 'desc1',
+          assignee: {
+            id: '1',
+            firstName: 'Siarhei',
+            lastName: 'Kiniou'
+          }
         },
         {
           id: '5',

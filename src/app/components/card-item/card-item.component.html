@@ -5,9 +5,9 @@
           {{card.name}}
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <p>Description</p>
-      <p>Due date</p>
-      <p>Assignee</p>
+      <p>Description: {{card.description}}</p>
+      <p>{{card.dueDate? 'Due date: ' + (card.dueDate | date :'mediumDate') : ' no dueDate' }}</p>
+      <p>{{card.assignee? '~ by '+ card.assignee.firstName+' '+card.assignee.lastName:''}}</p>
       <div class="task-operation">
         <button mat-flat-button color="accent">Edit</button>
         <button mat-flat-button color="warn" (click)="onRemove()">Remove</button>
