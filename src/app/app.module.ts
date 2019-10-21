@@ -3,45 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { BoardComponent } from './components/board/board.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { CardListComponent } from './components/card-list/card-list.component';
-import { CardItemComponent } from './components/card-item/card-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import {
-  MatToolbarModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule,
-  MatExpansionModule} from '@angular/material';
-import { FilterPipe } from './pipes/filter.pipe';
-import { CardDueDirective } from './directives/card-due.directive';
+
+import { CoreModule } from './core/core.module';
+import { BoardModule } from './board/board.module';
+import { AuthModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ToolbarComponent,
-    BoardComponent,
-    FooterComponent,
-    CardListComponent,
-    CardItemComponent,
-    FilterPipe,
-    CardDueDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    FormsModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatExpansionModule
+    CoreModule,
+    BoardModule,
+    AuthModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

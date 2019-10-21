@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import CardList from 'src/app/models/CardList';
-import Card from 'src/app/models/Card';
+import CardList from '../../models/CardList';
+import Card from '../../models/Card';
+
 
 @Component({
   selector: 'app-board',
