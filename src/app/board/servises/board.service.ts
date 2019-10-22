@@ -7,7 +7,24 @@ import Card from '../models/Card';
 })
 export class BoardService {
 
-  constructor() { }
+  removeItem(id) {
+    for (const card of this.items) {
+      const index = card.cards.findIndex(i => i.id === id);
+      if (index!=-1) {
+        card.cards.splice(index, 1);
+      }
+    }
+  }
+
+  getTaskById(id) {
+    for (const card of this.items) {
+      for (const item of card.cards) {
+        if (item.id === id) {
+          return item;
+        }
+      }
+    }
+  }
 
   public items:CardList [] =[
     {

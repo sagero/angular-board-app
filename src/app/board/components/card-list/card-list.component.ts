@@ -13,16 +13,21 @@ export class CardListComponent {
 
   @Input() cardList: CardList;
   @Input() searchCriterion: string
-  @Output() removeCard = new EventEmitter<Card>()
+  @Output() remove = new EventEmitter<Card>()
+  @Output() edit = new EventEmitter<Card>()
+  @Output() create = new EventEmitter<any>();
 
   constructor(public router: Router) { };
 
-  public removeItem(item: Card) {
-    const index = this.cardList.cards.findIndex(i => i.id === item.id);
-    this.cardList.cards.splice(index, 1);
+  public onRemove(item: Card) {
+    this.remove.emit(item);
   }
 
-  public onCreateTask() {
-    this.router.navigate(['board', 'create']);
+  public onEdit(item: Card) {
+    this.edit.emit(item);
+  }
+
+  public onCreate() {
+    this.create.emit();
   }
 }

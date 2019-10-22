@@ -3,7 +3,10 @@
       <app-card-list
         [cardList]="item"
         [searchCriterion]="searchCriterion"
-        (remove)="removeItem($event)">
+        (remove)="onRemove($event)"
+        (edit)="onEdit($event)"
+        (create)="onCreate($event)"
+        >
       </app-card-list>
   </div>
 </main>

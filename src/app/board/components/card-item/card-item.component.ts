@@ -10,9 +10,14 @@ export class CardItemComponent {
 
   @Input() card: Card
   @Input() isDone: boolean
-  @Output() removeCard = new EventEmitter<Card>()
+  @Output() remove = new EventEmitter<Card>()
+  @Output() edit = new EventEmitter<Card>()
 
   public onRemove() {
-    this.removeCard.emit(this.card);
+    this.remove.emit(this.card);
+  }
+
+  public onEdit() {
+    this.edit.emit(this.card);
   }
 }
