@@ -1,11 +1,24 @@
 import { Injectable } from '@angular/core';
 import CardList from '../models/CardList';
 import Card from '../models/Card';
+import User from '../models/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BoardService {
+
+  getAssignee() {
+    const result: User[] = [];
+    for (const card of this.items) {
+      for (const item of card.cards) {
+        if ((item.assignee)&&(!result.includes(item.assignee))) {
+          result.push(item.assignee);
+        }
+      }
+    }
+    return result;
+  }
 
   removeItem(id) {
     for (const card of this.items) {
@@ -14,6 +27,19 @@ export class BoardService {
         card.cards.splice(index, 1);
       }
     }
+  }
+
+  update(updateCard: Card) {
+
+    this.items.forEach((card, type: number) => {
+      card.cards.forEach((card: Card, index: number) => {
+        if (card.id === updateCard.id) {
+          console.log(this.items[type].cards[index]);
+          console.log(updateCard);
+          this.items[type].cards[index] = updateCard;
+        }
+      })
+    })
   }
 
   getTaskById(id) {
@@ -37,7 +63,7 @@ export class BoardService {
           description: 'desc1',
           dueDate: new Date('Tue Oct 05 2019 01:02:48 GMT+0300'),
           assignee: {
-            id: '1',
+            id: '2',
             firstName: 'Siarhei',
             lastName: 'Kiniou'
           }
@@ -66,8 +92,8 @@ export class BoardService {
           description: 'desc1',
           assignee: {
             id: '1',
-            firstName: 'Siarhei',
-            lastName: 'Kiniou'
+            firstName: 'Andrei',
+            lastName: 'Petrov'
           }
         },
         {
