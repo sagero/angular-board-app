@@ -1,4 +1,6 @@
 <header>
   <h1>LoGo</h1>
-  <button mat-flat-button color="primary">Login</button>
+
+  <button *ngIf="isLogged" mat-flat-button color="primary" (click)="logOut()">Logout</button>
+  <button *ngIf="!isLogged" mat-flat-button color="primary" (click)="logIn()">Login</button>
 </header>

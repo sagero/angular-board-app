@@ -10,6 +10,7 @@ export class AuthService {
   public login(username: string, password: string) {
     if (username && password) {
       localStorage.setItem('authToken', username);
+      this.router.navigateByUrl('/');
     }
   }
 
@@ -18,4 +19,7 @@ export class AuthService {
     this.router.navigateByUrl('/login');
   }
 
+  public isLogged() {
+    return localStorage.getItem('authToken');;
+  }
 }
