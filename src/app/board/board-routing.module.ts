@@ -7,7 +7,7 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
 
 const routes: Routes = [
   { path: '', component: BoardPageComponent },
-  { path: 'create', component: CreatePageComponent },
+  { path: 'create/:group', component: CreatePageComponent },
   { path: 'edit/:id', component: EditPageComponent }
 ];
 

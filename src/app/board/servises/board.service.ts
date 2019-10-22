@@ -8,6 +8,25 @@ import User from '../models/User';
 })
 export class BoardService {
 
+  addTask(card: Card, group: string) {
+    card.id= '' + this.nextId();
+    if (card.name) {
+      this.items[this.getIdGroup(group)].cards.push(card);
+    }
+  }
+
+  nextId() {
+    let next=0;
+    for (const card of this.items) {
+      for (const item of card.cards) {
+        if (Number(item.id) > next) {
+          next=Number(item.id);
+        }
+      }
+    }
+    return ++next;
+  }
+
   getAssignee() {
     const result: User[] = [];
     for (const card of this.items) {
@@ -34,8 +53,6 @@ export class BoardService {
     this.items.forEach((card, type: number) => {
       card.cards.forEach((card: Card, index: number) => {
         if (card.id === updateCard.id) {
-          console.log(this.items[type].cards[index]);
-          console.log(updateCard);
           this.items[type].cards[index] = updateCard;
         }
       })
@@ -50,6 +67,16 @@ export class BoardService {
         }
       }
     }
+  }
+
+  getIdGroup(name) {
+    let result=0;
+    this.items.forEach((card, index: number) => {
+     if (card.name == name) {
+        result= index;
+      }
+    })
+    return  result;
   }
 
   public items:CardList [] =[
@@ -84,7 +111,7 @@ export class BoardService {
     },
     {
       id: '1',
-      name:'In progress',
+      name:'In-progress',
       cards: [
         {
           id: '4',

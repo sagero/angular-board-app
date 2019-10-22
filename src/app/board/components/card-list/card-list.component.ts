@@ -15,7 +15,7 @@ export class CardListComponent {
   @Input() searchCriterion: string
   @Output() remove = new EventEmitter<Card>()
   @Output() edit = new EventEmitter<Card>()
-  @Output() create = new EventEmitter<any>();
+  @Output() create = new EventEmitter<string>();
 
   constructor(public router: Router) { };
 
@@ -27,7 +27,7 @@ export class CardListComponent {
     this.edit.emit(item);
   }
 
-  public onCreate() {
-    this.create.emit();
+  public onCreate(group: string) {
+    this.create.emit(group);
   }
 }

@@ -26,7 +26,7 @@ export class BoardComponent  implements OnInit {
     this.router.navigate(['board','edit', item.id]);
   }
 
-  public onCreate() {
-    this.router.navigate(['board', 'create']);
+  public onCreate(group: string) {
+    this.router.navigate(['board', 'create', group]);
   }
 }
