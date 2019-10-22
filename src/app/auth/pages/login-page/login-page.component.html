@@ -1,1 +1,11 @@
-<p>login-page works!</p>
+<form class="login-form" (submit)="login()">
+  <mat-form-field class="login-full-width">
+    <input matInput placeholder="Username" value="" name="username" [(ngModel)]="username" required>
+  </mat-form-field>
+  <mat-form-field class="login-full-width">
+    <input matInput placeholder="Password" value="" name="password" [(ngModel)]="password" type="password" required>
+  </mat-form-field>
+  <button class="login-form-button" type="submit" mat-button mat-stroked-button>
+    Login
+  </button>
+</form>
